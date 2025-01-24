@@ -66,6 +66,50 @@
             color: var(--primary-color);
             transform: translateY(-2px);
         }
+        
+         .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #f0f0f0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .youtube-button {
+            font-family: Service Station Regular;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF0000;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .youtube-button:hover {
+            background-color: #CC0000;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +119,49 @@
     </div>
 
     <!-- Rest of your page content goes here -->
+     <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-container">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/89Oc1UE7SS4?si=Tx6Ic8la4uH8lRUH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-container">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/RNsGJiVvmF0?si=STEC8eIGNIYpYTrf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8Y_eiyO77b4?si=o8BoHt2PdQ4TuuQe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-container">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/T610KFOSNHw?si=DDA8xCCNHl4_A9Lz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video-container">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/jYeq6XoOg8s?si=GIbur-LId9swAE3b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- YouTube Button -->
+        <a href="https://www.youtube.com/liveandbreathing" target="_blank" class="youtube-button">
+            Want to see more? Let's go!
+        </a>
+    </div>
+
+    <!--<div class="social-icons">
+        <a href="https://www.instagram.com/nixitech/" target="_blank">
+            <img src="images/instagram-icon.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/liveandbreathing" target="_blank">
+            <img src="images/youtube-icon.png" alt="YouTube">
+        </a>
+        <a href="https://bsky.app/profile/nixitech.bsky.social" target="_blank">
+            <img src="images/bluesky-icon.png" alt="Bluesky">
+        </a>
+    </div>
     <!-- Note: You'll need to link to your main CSS file for the rest of the page styles -->
 </body>
 </html>
