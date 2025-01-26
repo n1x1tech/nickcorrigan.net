@@ -66,6 +66,112 @@
             color: var(--primary-color);
             transform: translateY(-2px);
         }
+        
+         .bio-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .title-area {
+            flex: 2;
+        }
+
+        .graphics-area {
+            flex: 1;
+            max-width: 300px;
+            position: relative;
+        }
+
+        .name-title {
+            font-family: ServiceStation-Regular;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .highlight-text {
+            font-family: ServiceStation-Rough;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .bio-text {
+            font-family: American typewriter;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Animation styles */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .graphics-container {
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .lightning {
+            position: absolute;
+            top: -31px
+            left: -64%;
+            transform: translateX(-53%);
+            width: 110%;
+            animation: fadeUp 1s ease-out forwards;
+            animation-delay: 0.8s;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .tv-radio {
+            width: 85%;
+            z-index: 3;
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .graphics-area {
+                margin-top: 40px;
+                width: 100%;
+                max-width: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -75,6 +181,40 @@
     </div>
 
     <!-- Rest of your page content goes here -->
+    <div class="bio-container">
+        <div class="header-section">
+            <div class="title-area">
+                <h1 class="name-title">NICK CORRIGAN</h1>
+                <div class="subtitle">Multimedia Specialist</div>
+                
+                <div class="highlight-text">
+                    The lights go out.<br>
+                    The audience waits with anticipation.<br>
+                    We are about to go live.<br>
+                    Are you ready?
+                </div>
+            </div>
+
+            <div class="graphics-area">
+                <div class="graphics-container">
+                    <img src="images/LightningBG.png" alt="Lightning Bolts" class="lightning">
+                    <img src="images/Main.jpg" alt="TV Radio" class="tv-radio">
+                </div>
+            </div>
+        </div>
+
+        <div class="bio-text">
+            The feeling I get when the lights go out and the show is about to begin is the reason I chose live entertainment as my profession. I savor the chance to create experiences that are larger than life for both the artist and the audience.
+        </div>
+
+        <div class="bio-text">
+            I am a multimedia specialist and an audio video professional with nearly 20 years of experience in all aspects of live production technology. I currently work for Radford University as a Multimedia Designer and AI research and designer. I help develop learning content and create AI tools. It use technology to bring people together and communicate effectively. Utilizing production technology in live environments is one of my passions and has been throughout my career.
+        </div>
+
+        <div class="bio-text">
+            My first love is audio. My interest in live performances began when I played in bands in high school and throughout college at the University of Tennessee. Playing music progressed to mixing live bands and live broadcasts of bands and into a career as a professional audio visual technician. I am certified in many aspects of AV systems integration and operation.
+        </div>
+    </div>
     <!-- Note: You'll need to link to your main CSS file for the rest of the page styles -->
 </body>
 </html>
