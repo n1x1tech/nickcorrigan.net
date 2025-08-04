@@ -20,6 +20,7 @@
             --button-text: black;
             --button-text-hover: white;
         }
+        
         @font-face {
             font-family: 'air conditioner';
             src: url('../fonts/Air Conditioner.ttf') format('woff2'),
@@ -35,14 +36,19 @@
             font-style: normal;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             max-width: 1200px;
             margin: 0 auto;
             font-family: 'Air Conditioner', sans-serif;
             padding: 20px;
+            min-height: 100vh;
         }
 
-         .header {
+        .header {
             position: relative;
             border-top: 2px solid var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
@@ -82,6 +88,7 @@
             display: flex;
             margin-top: 40px;
             gap: 40px;
+            align-items: flex-start;
         }
 
         /* Animation keyframes */
@@ -109,18 +116,22 @@
 
         .illustration {
             flex: 1;
-            max-width: 500px;
             position: relative;
-             aspect-ratio: 1/1;
-            padding-top: 80px; /* Adjust space for lightning */
-        
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .illustration-container {
+            position: relative;
+            width: 100%;
+            padding-top: 20%;
         }
 
         .tv-radio {
             width: 80%;
             height: auto;
             display: block;
-            margin: 16 auto;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
             animation: slideIn 1s ease-out forwards;
@@ -128,39 +139,42 @@
 
         .lightning {
             position: absolute;
-            top: 0;
-            left: 3%;
-            transform: translateX(0%);
-            width: 75%;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
             height: auto;
             z-index: 2;
             animation: fadeUp 1s ease-out forwards;
             animation-delay: 0.8s;
             opacity: 0;
+            max-width: none;
         }
 
         .nav-menu {
             flex: 1;
             padding-top: 20px;
+            min-width: 250px;
         }
 
         .nav-menu a {
-            display: inline-block;
+            display: block;
             font-size: 1.5rem;
             text-decoration: none;
-            color: black;
+            color: var(--button-text);
             margin-bottom: 20px;
             padding: 10px 20px;
-            border: 3px solid #1B4F72;
+            border: 3px solid var(--button-border);
             border-radius: 5px;
             transition: all 0.3s ease;
-            width: 200px;
             text-align: center;
+            width: 100%;
+            max-width: 200px;
         }
 
         .nav-menu a:hover {
-            background-color: #1B4F72;
-            color: white;
+            background-color: var(--button-hover);
+            color: var(--button-text-hover);
             transform: translateX(10px);
         }
 
@@ -172,6 +186,105 @@
             width: 24px;
             margin-right: 10px;
         }
+
+        /* Tablet styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .header {
+                margin-bottom: 20px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+            
+            .illustration {
+                max-width: 100%;
+                order: 1;
+            }
+            
+            .nav-menu {
+                order: 2;
+                padding-top: 0;
+                min-width: auto;
+            }
+            
+            .nav-menu a {
+                font-size: 1.3rem;
+                max-width: none;
+                margin-bottom: 15px;
+            }
+            
+            .lightning {
+                top: -15%;
+                width: 85%;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .main-content {
+                gap: 20px;
+            }
+            
+            .illustration-container {
+                padding-top: 10%;
+            }
+            
+            .tv-radio {
+                width: 90%;
+            }
+            
+            .lightning {
+                top: -10%;
+                width: 95%;
+            }
+            
+            .nav-menu a {
+                font-size: 1.2rem;
+                padding: 12px 15px;
+                margin-bottom: 12px;
+            }
+            
+            .nav-menu a:hover {
+                transform: translateX(5px);
+            }
+        }
+
+        /* Very small mobile */
+        @media (max-width: 320px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .nav-menu a {
+                font-size: 1.1rem;
+                padding: 10px 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -182,8 +295,22 @@
 
     <div class="main-content">
         <div class="illustration">
-            <img src="images/Graphic1.png" alt="Vintage TV Radio" class="tv-radio">
-            <img src="images/LightningBG.png" alt="Lightning Bolts" class="lightning">
+            <div class="illustration-container">
+                <!-- Placeholder images - replace with your actual images -->
+                <svg class="tv-radio" viewBox="0 0 400 300" xmlns="images/graphic1.png">
+                    <rect x="50" y="50" width="300" height="200" fill="#8B4513" stroke="black" stroke-width="2" rx="10"/>
+                    <rect x="70" y="70" width="150" height="100" fill="#222" stroke="black" stroke-width="1"/>
+                    <circle cx="300" cy="120" r="30" fill="#333" stroke="black" stroke-width="2"/>
+                    <circle cx="300" cy="120" r="20" fill="#666"/>
+                    <rect x="250" y="180" width="80" height="20" fill="#444" rx="10"/>
+                    <text x="200" y="280" text-anchor="middle" fill="black" font-size="12">VINTAGE TV/RADIO</text>
+                </svg>
+                
+                <svg class="lightning" viewBox="0 0 400 200" xmlns="images/LightningBG.png">
+                    <path d="M100 20 L120 80 L80 80 L120 160 L140 100 L180 100 L140 20 Z" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+                    <path d="M250 30 L270 70 L230 70 L270 140 L290 90 L330 90 L290 30 Z" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+                </svg>
+            </div>
         </div>
         
         <div class="nav-menu">
@@ -193,12 +320,6 @@
             <a href="/bio.html">Bio</a>
             <a href="/cv.html">CV</a>
             <a href="/contact.html">Contact</a>
-            
-           <!-- <div class="social-icons">
-                <img src="/api/placeholder/24/24" alt="Instagram">
-                <img src="/api/placeholder/24/24" alt="Facebook">
-                <img src="/api/placeholder/24/24" alt="Vimeo">
-            </div>-->
         </div>
     </div>
 </body>
